@@ -60,4 +60,12 @@ md-sidenav md-list{
     -webkit-transform: translateZ(0.70);
     transform: translateZ(0.70);
 }
+/* for floating button fix for small devices*/
+.scrollable-nav-content{
+position: absolute;
+top:136px;
+bottom:0px;
+left:0px;
+width: 100%;overflow: auto;
+}
 

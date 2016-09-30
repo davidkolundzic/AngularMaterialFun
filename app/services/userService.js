@@ -16,7 +16,11 @@
         {
             name: 'Lia Lugo',
             avatar: 'svg-1',
-            bio: 'I love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese swiss boursin fondue caerphilly. Cow port-salut camembert de normandie macaroni cheese feta who moved my cheese babybel boursin. Red leicester roquefort boursin squirty cheese jarlsberg blue castello caerphilly chalk and cheese. Lancashire.'
+            bio: 'I love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese swiss boursin fondue caerphilly. Cow port-salut camembert de normandie macaroni cheese feta who moved my cheese babybel boursin. Red leicester roquefort boursin squirty cheese jarlsberg blue castello caerphilly chalk and cheese. Lancashire.',
+            notes:[
+                {'title':'Pariatur cillum amet.',date:Date.now()},
+                 {'title':'Sint ad esse est.',date:Date.now()-24 * 60 * 60 * 1000}
+            ]
         },
         {
             name: 'George Duke',

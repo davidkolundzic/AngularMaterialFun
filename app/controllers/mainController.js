@@ -3,20 +3,26 @@
 
     angular
         .module('contactManagerApp')
+        .constant('settings',{
+            'tabindex':1
+        })
         .controller('mainController', mainController);
 
-    mainController.$inject = ['userService','$mdSidenav'];
+    mainController.$inject = ['userService','$mdSidenav','$mdToast','settings'];
 
-    function mainController(userService, $mdSidenav) {
+    function mainController(userService, $mdSidenav,$mdToast,settings) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'mainController';
         vm.uers = [];
         vm.selected = null;
-        vm.toggleSideNav = toggleSideNav;
+        vm.toggleSideNav = toggleSideNav; 
         vm.selectUser = selectUser;
         vm.searchText = '';
-        vm.tabIndex = 0;
+        vm.tabIndex = settings.tabindex;
+        vm.removeNote=removeNote;
+        vm.openToast=openToast;
+        vm.showCustomToast=showCustomToast;
 
 
         userService.loadAllUsers().then(
@@ -36,12 +42,31 @@
             vm.selected = user;
             var sidenav = $mdSidenav('left');
             if (sidenav.isOpen) {
-                sidenav.close();
+                sidenav.close(); 
 
             }
-            vm.tabIndex = 0;
+            vm.tabindex = settings.tabindex;
         }
-
+        function removeNote(note) {
+            var index=vm.selected.notes.indexOf(note);
+            vm.selected.notes.splice(index,1);  
+            //vm.openToast("Note was removed");
+            vm.showCustomToast(); 
+        }
+        function showCustomToast(){
+            $mdToast.show({
+                hideDelay:5000,
+                position:'topright',
+                templateUrl:'/app/view/custom-toast.html'
+            });
+        }
+        function openToast(message) {
+            $mdToast.show(
+                $mdToast.simple()
+                .textContent(message)
+                .position('top right')
+                .hideDelay(3000));
+        }
         activate();
         function activate() { }
     }

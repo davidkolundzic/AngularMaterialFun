@@ -1,0 +1,3 @@
+- tablica sa slikama i nazivom https://design.google.com/icons/ 
+- dodati sve sa visual studiom nuget
+- dodaju se md-icon="content:add"
