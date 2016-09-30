@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html ng-app="contactManagerApp">
+<head >
+    <title></title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link href="Content/angular-material.css" rel="stylesheet" />
+    <link href="Content/app.css" rel="stylesheet" />
+</head>
+<body layout="row" ng-cloak ng-controller="mainController as vm">
+
+    <div ng-include="'app/view/sidenav.html'" layout="vertical"></div>
+
+    <div layout="column" flex >
+        <div ng-include="'app/view/toolbar-header.html'" ></div>
+        <md-content flex id="content">
+            <div ng-include="'app/view/main-content.html'"></div>
+            <md-tabs md-dynamic-height=""
+                     md-strech-tabls="always"
+                     md-selected="vm.tabIndex">
+                <md-tab label="Bio">
+                    <div ng-include="'app/view/tab-bio.html'"></div>
+                </md-tab>
+                <md-tab label="Notes" flex>
+                    <div ng-include="'app/view/tab-notes.html'"></div>
+                </md-tab>
+            </md-tabs>
+        </md-content>
+    </div>
+    <!--<div  layout="row" layout-xs="column">
+        <div layout="row" flex="30">
+            <div flex style="background-color:#009688">first item row</div>
+            <div flex style="background-color:#3949ab">second item row</div>
+        </div>
+        <div layout="column" flex>
+            <div flex style="background-color:#009688">first item in column</div>
+            <div flex style="background-color:#3949ab">second item in column</div>
+        </div>
+    </div>-->
+
+    <!-- Angular Library -->
+    <script src="Scripts/angular/angular.js"></script>
+    <script src="Scripts/angular-animate/angular-animate.js"></script>
+    <script src="Scripts/angular-aria/angular-aria.js"></script>
+    <script src="Scripts/angular-material/angular-material.js"></script>
+
+    <!-- App angular modules-->
+    <script src="app/app.js"></script>
+    <!-- controller -->
+    <script src="app/controllers/mainController.js"></script>
+
+    <!-- services -->
+    <script src="app/services/userService.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿  [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+html,body {
+    font-family:'Roboto';
+    font-size:14px;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+md-toolbar h1 {
+  font-size: 1.250em;
+  font-weight: 400;
+  margin: auto
+}
+md-toolbar .md-toolbar-tools h1 {
+  font-size: 1.250em;
+  font-weight: 400;
+}
+
+/*main content*/
+
+
+#content  {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+}
+
+#content md-icon.avatar {
+  margin-top: 10px;
+}
+/*Sidenav*/
+md-list .md-button{
+    width:100%;
+    text-align:left;
+    font-weight:500;
+}
+
+md-list .md-button.selected{
+    color:#03a9f4;
+}
+md-sidenav md-list{
+    padding: 0 0 8 0;
+}
+.avatar {
+    position:relative;
+    width:128px;
+    height:128px;
+    zoom: 0.70;
+    border-radius:50%;
+    overflow:hidden;
+    border:1px solid gray;
+    margin:0px;
+    display:inline-block;
+    vertical-align:middle;
+    -moz-transform: translateZ(0.70);
+    -ms-transform: translateZ(0.70);
+    -o-transform: translateZ(0.70);
+    -webkit-transform: translateZ(0.70);
+    transform: translateZ(0.70);
+}
+
